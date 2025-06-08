@@ -1,11 +1,5 @@
 <?php
 
-namespace Script;
-
-use PDO;
-use PDOException;
-use RuntimeException;
-
 class Database {
     private static ?Database $instance = null;
     private PDO $pdo;
