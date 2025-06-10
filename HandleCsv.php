@@ -34,7 +34,7 @@ class HandleCsv {
 
     }
 
-    // read csv
+    // import csv
     public function importCsv(string $filename): void
     {
         // check user table exists
