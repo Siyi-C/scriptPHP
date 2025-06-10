@@ -32,8 +32,7 @@ if(isset($opts['create_table'])) {
 }
 
 if (isset($opts['file'])) {
-     $csv = $handle->readCsv($opts['file']);
-     $handle->insert($csv);
+     $csv = $handle->importCsv($opts['file']);
 } else {
       echo "Error: --file option requires a filename. Example: php user_upload.php --file [filename] \n";
       exit;
