@@ -6,12 +6,12 @@ class Database {
 
      private function __construct()
     {
-        $host = getenv('DB_HOST');
-        $db   = getenv('MYSQL_DATABASE');
-        $user = getenv('MYSQL_USER');
-        $pass = getenv('MYSQL_PASSWORD');
+        $host = ($_ENV['DB_HOST']);
+        $db   = ($_ENV['MYSQL_DATABASE']);
+        $user = ($_ENV['MYSQL_USER']);
+        $pass = ($_ENV['MYSQL_PASSWORD']);
 
-        $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+        $dsn = "mysql:host=$host;port=3306;dbname=$db;charset=utf8mb4";
 
         try {
             $this->pdo =new PDO($dsn, $user, $pass);

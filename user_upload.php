@@ -3,6 +3,11 @@
 require_once __DIR__ . '/Database.php';
 require_once __DIR__ . '/HandleCsv.php';
 
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 $opts = getopt("u:p:h:", ["file:", "create_table", "dry_run", "help"]);
 
 if (isset($opts['help'])){
