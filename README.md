@@ -38,6 +38,24 @@ composer install
 ```bash 
 docker compose up --build
 ```
+
+## CLI Usage outside docker container
+```bash 
+php user_upload.php --create_table -u user -h 127.0.0.1 -p password
+```
+
+```bash
+php user_upload.php --create_table -u user -h 127.0.0.1 -p password  --dry_run
+```
+
+```bash
+php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password
+```
+
+```bash
+php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password --dry_run
+```
+
 ## If you run a script inside docker container,
 ```bash 
 docker ps 
@@ -50,7 +68,7 @@ You will see the container list.
 
 Copy the scriptphp-php container id 
 ```bash
-docker exec -it [past_container_id_here] bash
+docker exec -it [past_scriptphp-php_container_id_here] bash
 ```
 You are now inside the Docker container. 
 
@@ -75,6 +93,11 @@ php user_upload.php --file users.csv
 php user_upload.php --file users.csv --dry_run
 ```
 
+## Output: 
+<p align="center">
+  <img src="assets/usersDataFromTablePlus.png" width="100%">
+</p>
+
 ## CLI Usage outside docker container
 ```bash 
 php user_upload.php --create_table -u user -h 127.0.0.1 -p password
@@ -91,3 +114,41 @@ php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password
 ```bash
 php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password --dry_run
 ```
+
+## Enter Database inside container
+```bash
+docker ps
+```
+
+Copy mysql:8.0 container id
+```bash 
+docker exec -it [past_mysql_container_id] bash
+```
+
+```bash
+mysql -u user -h db -p
+```
+then enter password
+
+```bash
+show databases;
+```
+
+```bash
+use mydb;;
+```
+
+```bash
+show tables;
+```
+
+### If you create user table already, it will show:
+<p align="center">
+  <img src="assets/showTables.png" width="100%">
+</p>
+
+
+### If you insert users already, it will show:
+<p align="center">
+  <img src="assets/usersData.png" width="100%">
+</p>
