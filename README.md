@@ -9,11 +9,36 @@ Create a PHP script, that is executed from the command line, which accepts a CSV
 ```bash
 git clone https://github.com/Siyi-C/scriptPHP.git
 ```
-# Run the script
+# Database Credential
+Copy env.example to your env file and use your own credential, or you can copy below credential
+
+If you are running script inside docker container
+```bash 
+MYSQL_ROOT_PASSWORD=password
+DB_HOST=db 
+MYSQL_DATABASE=mydb
+MYSQL_USER=user
+MYSQL_PASSWORD=password
+```
+
+OR If you are running script outside from docker container
+```bash 
+MYSQL_ROOT_PASSWORD=password
+DB_HOST=127.0.0.1 
+MYSQL_DATABASE=mydb
+MYSQL_USER=user
+MYSQL_PASSWORD=password
+```
+
+# Build and Run the script
+```bash
+composer install
+```
+
 ```bash 
 docker compose up --build
 ```
-If you are running script inside docker,
+## If you run a script inside docker container,
 ```bash 
 docker ps 
 ```
@@ -23,25 +48,13 @@ You will see the container list.
   <img src="assets/dockerContainer.png" width="100%">
 </p>
 
-## If you use .env
-
-### Database Credential
-copy env.example to your env file, you can use below credential
-```bash 
-MYSQL_ROOT_PASSWORD=password
-DB_HOST=db 
-MYSQL_DATABASE=mydb
-MYSQL_USER=user
-MYSQL_PASSWORD=password
-```
-
 Copy the scriptphp-php container id 
 ```bash
 docker exec -it [past_container_id_here] bash
 ```
 You are now inside the Docker container. 
 
-## CLI Usage
+## CLI Usage inside docker container
 ```bash
 php user_upload.php --help
 ```
@@ -62,15 +75,7 @@ php user_upload.php --file users.csv
 php user_upload.php --file users.csv --dry_run
 ```
 
-## If you are not use .env
-### Database Credential
-```bash 
-MYSQL_ROOT_PASSWORD=password
-DB_HOST=127.0.0.1 
-MYSQL_DATABASE=mydb
-MYSQL_USER=user
-MYSQL_PASSWORD=password
-```
+## CLI Usage outside docker container
 ```bash 
 php user_upload.php --create_table -u user -h 127.0.0.1 -p password
 ```

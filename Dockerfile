@@ -6,13 +6,8 @@ RUN docker-php-ext-install pdo pdo_mysql
 # Install MySQL client
 RUN apt-get update && apt-get install -y default-mysql-client
 
-# Install composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 WORKDIR /var/www/html
 
 # executes a bash shell to keep container running for developing and testing purpose, 
 # otherwise the container will exit
 CMD ["bash"]
-
-RUN composer install
