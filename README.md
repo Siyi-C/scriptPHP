@@ -12,7 +12,7 @@ git clone https://github.com/Siyi-C/scriptPHP.git
 # Database Credential
 Copy env.example to your env file and use your own credential, or you can copy below credential
 
-If you are running script inside docker container
+If you run script inside docker container
 ```bash 
 MYSQL_ROOT_PASSWORD=password
 DB_HOST=db 
@@ -21,7 +21,7 @@ MYSQL_USER=user
 MYSQL_PASSWORD=password
 ```
 
-OR If you are running script outside from docker container
+OR If you run script outside from docker container
 ```bash 
 MYSQL_ROOT_PASSWORD=password
 DB_HOST=127.0.0.1 
