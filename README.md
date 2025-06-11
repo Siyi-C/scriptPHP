@@ -119,7 +119,7 @@ show databases;
 ```
 
 ```bash
-use mydb;;
+use mydb;
 ```
 
 ```bash
