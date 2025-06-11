@@ -56,6 +56,12 @@ php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password
 php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password --dry_run
 ```
 
+### Output: 
+<p align="center">
+  <img src="assets/usersDataFromTablePlus.png" width="100%">
+</p>
+
+
 ## If you run a script inside docker container,
 ```bash 
 docker ps 
@@ -91,28 +97,6 @@ php user_upload.php --file users.csv
 
 ```bash
 php user_upload.php --file users.csv --dry_run
-```
-
-## Output: 
-<p align="center">
-  <img src="assets/usersDataFromTablePlus.png" width="100%">
-</p>
-
-## CLI Usage outside docker container
-```bash 
-php user_upload.php --create_table -u user -h 127.0.0.1 -p password
-```
-
-```bash
-php user_upload.php --create_table -u user -h 127.0.0.1 -p password  --dry_run
-```
-
-```bash
-php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password
-```
-
-```bash
-php user_upload.php --file users.csv -u user -h 127.0.0.1 -p password --dry_run
 ```
 
 ## Enter Database inside container
