@@ -10,7 +10,7 @@ Create a PHP script, that is executed from the command line, which accepts a CSV
 git clone https://github.com/Siyi-C/scriptPHP.git
 ```
 # Database Credential
-Copy env.example to your env file and use your own credential, or you can copy below credential
+Copy env.example to your env file and copy below credential
 
 If you run script inside docker container
 ```bash 
